@@ -13,6 +13,8 @@ Then follow the steps below:
 4) Send any lines / messages you want. You will see them printed in the stdout from the "server", they will also be echoed back to you in netcat.
 5) To trigger the socket handover between processes send the message "STEAL". The next line you send from `nc` will appear in the stdout for the "client" process.
 
+If you want to rerun this process and something broke while doing the above steps. You might need to delete `/tmp/hot-socket2` if it didnt get cleaned up. As mentioned... this example is fragile :)
+
 ## How this works
 More or less this is an example implementation of the process as described by https://copyconstruct.medium.com/file-descriptor-transfer-over-unix-domain-sockets-dcbbf5b3b6ec
 and implemented in Envoy proxy (https://blog.envoyproxy.io/envoy-hot-restart-1d16b14555b5). 
